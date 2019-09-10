@@ -8,8 +8,7 @@ namespace AlamoCorp.Web.Core.Models.Core
 {
     public class Order
     {
-        [Key]
-        public long ID { get; set; }
+        public long OrderID { get; set; }
         public DateTime CreatedDate { get; set; }
         public Customer Customer { get; set; }
         public List<Product> LineItems { get; set; }

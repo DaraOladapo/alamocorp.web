@@ -4,8 +4,8 @@ namespace AlamoCorp.Web.Core.Models.Core
 {
     public class Customer
     {
-        [Key]
-        public long ID { get; set; }
+       
+        public long CustomerID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName => $"{FirstName} {LastName}";

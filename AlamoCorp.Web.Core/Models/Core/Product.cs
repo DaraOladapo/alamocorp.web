@@ -7,8 +7,8 @@ namespace AlamoCorp.Web.Core.Models.Core
 {
     public class Product
     {
-        [Key]
-        public long ID { get; set; }
+       
+        public long ProductID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }

@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AlamoCorp.Web.API.Data;
+using Microsoft.AspNetCore.Mvc;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace AlamoCorp.Web.API.Controllers
+{
+    [Route("api/[controller]")]
+    public class CustomersController : Controller
+    {
+        private ApplicationDbContext dbContext;
+        public CustomersController(ApplicationDbContext applicationDbContext)
+        {
+            dbContext = applicationDbContext;
+        }
+    }
+}
