@@ -16,7 +16,7 @@ namespace AlamoCorp.Web.API.Services
                 new Product()
                 {
                     Name="Gold Ceramic Cup",
-                     Description="Gold Plated Ceramic cup with 19th Century Gothic Text",
+                     Description="",
                       MainImageURL="",
                        Price=3500,
                      DateCreated=DateTime.Now,
