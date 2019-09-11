@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using AlamoCorp.Web.API.Data;
+using AlamoCorp.Web.API.Services;
 using AlamoCorp.Web.Core.Models.Core;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +25,12 @@ namespace AlamoCorp.Web.API.Controllers
         {
             var Products = dbContext.Products.ToList();
             return Ok(Products);
+        }
+        [HttpPost("AddProduct")]
+        public ActionResult<IEnumerable<Product>> AddProduct([FromBody]Product product)
+        {
+            var UpdatedProducts = ProductService.AddProduct(dbContext, product);
+            return Ok(UpdatedProducts);
         }
     }
 }

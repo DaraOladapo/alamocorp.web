@@ -194,5 +194,13 @@ namespace AlamoCorp.Web.API.Services
             dbContext.Products.AddRange(Products);
             dbContext.SaveChanges();
         }
+        internal static IEnumerable<Product> AddProduct(ApplicationDbContext dbContext, Product product)
+        {
+            dbContext.Products.Add(product);
+            dbContext.SaveChanges();
+
+            var Products = dbContext.Products.ToList();
+            return Products;
+        }
     }
 }
