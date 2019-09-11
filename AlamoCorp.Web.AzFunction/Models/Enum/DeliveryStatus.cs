@@ -1,4 +1,4 @@
-﻿namespace AlamoCorp.Web.Core.Models.Enum
+﻿namespace AlamoCorp.Web.AzFunction.Models.Enum
 {
     public enum DeliveryStatus
     {

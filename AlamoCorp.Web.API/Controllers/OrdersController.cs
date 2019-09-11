@@ -37,5 +37,12 @@ namespace AlamoCorp.Web.API.Controllers
             var Order = OrderService.GetOrder(dbContext, orderID);
             return Ok(Order);
         }
+        [HttpPut("updateorderstatus/{orderID}")]
+        public ActionResult<Order> UpdateOrderStatus(long orderID)
+        {
+            var UpdatedOrder = OrderService.UpdateOrder(dbContext, orderID);
+            return Ok(UpdatedOrder);
+        }
     }
 }
+

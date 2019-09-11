@@ -1,5 +1,6 @@
 ﻿using AlamoCorp.Web.API.Data;
 using AlamoCorp.Web.Core.Models.Core;
+using AlamoCorp.Web.Core.Models.Enum;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,5 +32,42 @@ namespace AlamoCorp.Web.API.Services
             return Order;
         }
 
+        internal static Order UpdateOrder(ApplicationDbContext dbContext, long orderID)
+        {
+            var Order = dbContext.Orders.FirstOrDefault(opt => opt.OrderID == orderID);
+            if (Order != null)
+            {
+
+                switch (Order.DeliveryStatus)
+                {
+                    case DeliveryStatus.New:
+                        Order.DeliveryStatus = DeliveryStatus.Processing;
+                        break;
+                    case DeliveryStatus.Processing:
+                        Order.DeliveryStatus = DeliveryStatus.Confirmed;
+                        break;
+                    case DeliveryStatus.Confirmed:
+                        Order.DeliveryStatus = DeliveryStatus.Dispatched;
+                        break;
+                    case DeliveryStatus.Dispatched:
+                        Order.DeliveryStatus = DeliveryStatus.Shipped;
+                        break;
+                    case DeliveryStatus.Shipped:
+                        Order.DeliveryStatus = DeliveryStatus.Delivered;
+                        break;
+                    case DeliveryStatus.Delivered:
+                        Order.DeliveryStatus = DeliveryStatus.Delivered;
+                        break;
+                    default:
+                        Order.DeliveryStatus = DeliveryStatus.New;
+                        break;
+                }
+                return Order;
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
