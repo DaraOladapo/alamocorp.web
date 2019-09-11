@@ -11,7 +11,7 @@ namespace AlamoCorp.Web.AzFunction.Models.Core
         public long OrderID { get; set; }
         public DateTime CreatedDate { get; set; }
         public Customer Customer { get; set; }
-        public List<CartLineItems> LineItems { get; set; }
+        public List<Product> LineItems { get; set; }
         public decimal TotalAmount { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
         public DeliveryMethod DeliveryMethod { get; set; }
