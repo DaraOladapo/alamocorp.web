@@ -26,7 +26,7 @@ namespace AlamoCorp.Web.API.Controllers
             return Ok(CreatedCustomer);
         }
         [HttpGet("getcustomers")]
-        public ActionResult<Customer> GetCustomers()
+        public ActionResult<IEnumerable<Customer>> GetCustomers()
         {
             var Customers = dbContext.Customers.ToList();
             return Ok(Customers);
