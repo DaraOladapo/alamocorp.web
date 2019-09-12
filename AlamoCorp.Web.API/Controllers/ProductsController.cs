@@ -32,5 +32,11 @@ namespace AlamoCorp.Web.API.Controllers
             var UpdatedProducts = ProductService.AddProduct(dbContext, product);
             return Ok(UpdatedProducts);
         }
+        [HttpDelete("deleteproduct/{productID}")]
+        public ActionResult<IEnumerable<Product>> DeleteProduct(long productID)
+        {
+            return Ok(new List<Product>() { });
+
+        }
     }
 }
