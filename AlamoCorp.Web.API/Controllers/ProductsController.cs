@@ -32,11 +32,22 @@ namespace AlamoCorp.Web.API.Controllers
             var UpdatedProducts = ProductService.AddProduct(dbContext, product);
             return Ok(UpdatedProducts);
         }
-        [HttpDelete("deleteproduct/{productID}")]
-        public ActionResult<IEnumerable<Product>> DeleteProduct(long productID)
-        {
-            return Ok(new List<Product>() { });
+        //[HttpDelete("deleteproduct/{productID}")]
+        //public ActionResult<IEnumerable<Product>> DeleteProduct(long productID)
+        //{
+        //    var ProductToDelete = dbContext.Products.FirstOrDefault(opt => opt.ProductID == productID);
+        //    if (ProductToDelete != null)
+        //    {
+        //        dbContext.Products.Remove(ProductToDelete);
+        //        dbContext.SaveChanges();
+        //    }
+        //    else
+        //    {
+        //        return NotFound($"Product with ID: {productID} not found");
+        //    }
+        //    var Products = dbContext.Products.ToList();
+        //    return Ok(Products);
 
-        }
+        //}
     }
 }
